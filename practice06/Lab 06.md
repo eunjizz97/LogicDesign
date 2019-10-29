@@ -15,7 +15,7 @@
 `Please fill up your source`
 ### **FPGA 동작 사진 (3개- 일반, Q1, Q2)**
 `Please fill up your source`
-
+![](https://github.com/eunjizz97/LogicDesign/blob/master/practice06/1.PNG)
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTYyNTE5MTUyN119
 -->https://github.com/eunjizz97/LogicDesign/blob/master/practice06/1.PNG
