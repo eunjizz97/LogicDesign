@@ -18,4 +18,4 @@
 
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTYyNTE5MTUyN119
--->
+-->https://github.com/eunjizz97/LogicDesign/blob/master/practice06/1.PNG
