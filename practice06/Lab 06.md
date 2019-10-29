@@ -18,7 +18,7 @@
 ![](https://github.com/eunjizz97/LogicDesign/blob/master/practice06/1.PNG)
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTYyNTE5MTUyN119
--->https://github.com/eunjizz97/LogicDesign/blob/master/practice06/1.PNG
+-->
 ![](https://github.com/eunjizz97/LogicDesign/blob/master/practice06/%EC%BA%A1%EC%B2%98.PNG)
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTU2OTgzMDU4OV19
