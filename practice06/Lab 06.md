@@ -37,4 +37,4 @@ eyJoaXN0b3J5IjpbMTU2OTgzMDU4OV19
 -->`
 
 ### **FPGA 동작 사진 (3개- 일반, Q1, Q2)**
-`![](https://github.com/eunjizz97/LogicDesign/blob/master/practice06/7seg.PNG) `
+`![](https://github.com/eunjizz97/LogicDesign/blob/master/practice06/7seg.PNG)`
