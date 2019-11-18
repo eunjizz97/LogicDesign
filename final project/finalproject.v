@@ -26,7 +26,7 @@ always @(posedge clk or negedge rst_n) begin
 		end
 	end
 end
-
+//o_gen_blink_clk ??? 
 endmodule
 
 //	--------------------------------------------------
@@ -123,15 +123,19 @@ always @(posedge gen_clk or negedge rst_n) begin
 end
 
 reg	[5:0]	o_seg_enb		;
+reg       blink_clk       //?? ???? clk ?? o_blink_seg_enb ??? case? ???
 
 always @(cnt_common_node) begin
-	case (cnt_common_node)
-		4'd0 : o_seg_enb = 6'b111110;
-		4'd1 : o_seg_enb = 6'b111101;
-		4'd2 : o_seg_enb = 6'b111011;
-		4'd3 : o_seg_enb = 6'b110111;
-		4'd4 : o_seg_enb = 6'b101111;
-		4'd5 : o_seg_enb = 6'b011111;
+	case (blink)
+	  1'b1 :
+		  if(cnt_common_node==4'd0) begin o_seg_enb = 6'b111110;
+		  end else if (cnt_common_node==4'd1) begin o_seg_enb <= 6'b111101;
+		  end else if (cnt_common_node==4'd2) begin o_seg_enb <= 6'b111011;
+		  end else if (cnt_common_node==4'd3) begin o_seg_enb <= 6'b110111;
+		  end else if (cnt_common_node==4'd4) begin o_seg_enb <= 6'b101111;
+		  end else if (cnt_common_node==4'd5) begin o_seg_enb <= 6'b011111;
+		  
+		1'b0: o_seg_enb <= 6'b000000;
 	endcase
 end
 
@@ -404,6 +408,29 @@ hms_cnt		u2_hms_cnt(
 
 endmodule
 
+
+//--------------------------------------------
+// set blinking seg_enb module
+//--------------------------------------------
+module blink(
+    );
+
+reg [5:0] o_blink_seg_enb;    // 0?? blink ??? ?
+
+   always@(*) begin
+     if(o_mode == 1) begin
+       if(o_position==2'b00) begin
+         o_blink_seg_enb <= 6'b111100;
+       end else if(o_position==2'b01) begin
+         o_blink_seg_enb <= 6'b110011;
+       end else if (o_position==2'b10) begin
+         o_blink_seg_enb <= 6'b001111;
+       end
+     end
+
+endmodule
+
+
 module	top_hms_clock(
 		o_seg_enb,
 		o_seg_dp,
@@ -524,6 +551,13 @@ led_disp	u_led_disp(
 				.clk		(clk),
 				.rst_n		(rst_n));
 
+allsegoff u_led_disp_off(
+    .h0 (o_seg_0), 
+    .h1 (o_seg_1), 
+    .h2 (o_seg_2), 
+    .h3 (o_seg_3),
+    .h4 (o_seg_4),
+    .h5 (o_seg_5));
 
 endmodule
 
