@@ -326,7 +326,7 @@ debounce	u3_debounce(
 
 reg	[1:0]	o_mode			;
 always @(posedge sw0 or negedge rst_n) begin
-	if(rst_n == 1'b0) begin
+  if(rst_n == 1'b0) begin
 		o_mode <= MODE_CLOCK;
 	end else begin
 		if(o_mode >= MODE_ALARM) begin
@@ -334,20 +334,32 @@ always @(posedge sw0 or negedge rst_n) begin
 		end else begin
 			o_mode <= o_mode + 1'b1;
 		end
-	end
+	end	  
 end
 
 reg	[1:0]	o_position		; // have to rewrite 
-always @(posedge sw1 or negedge rst_n) begin
-	if(rst_n == 1'b0) begin
+  always @(posedge sw1 or negedge rst_n) begin
+  if(rst_n == 1'b0) begin
 		o_position <= POS_SEC;
 	end else begin
 		o_position <= o_position + 1'b1;
 		if(o_position == 2'b10) begin
 			o_position <= POS_SEC;
 		end
-	end
-end
+	end 
+/*  case (o_position)      //o_position case version
+	  POS_SEC : begin
+	    o_position <= POS_MIN;
+	   end
+	   POS_MIN : begin
+	     o_position <= POS_HR;
+	   end
+	   POS_HR  : begin
+	     o_position <= POS_SEC;
+	   end
+	   default : o_position <= POS_SEC;
+	 endcase */
+end 
 
 reg		o_alarm_en		;
 always @(posedge sw3 or negedge rst_n) begin
@@ -726,12 +738,11 @@ input         o_position      ;
 input         clk             ;
 input         rst_n           ;
 
-reg     [5:0] o_blink_seg_enb     ;    // 0?? blink ??? ?
+reg     [5:0] o_blink_seg_enb     ;    // OFF: o_blink_seg_enb = 0, ON: o_blink_seg_enb = 1
 
-//wire  cnt_blink;
-wire  clk_4hz;
+wire  clk_4hz;                    //about blink clk
 
-nco		u_blink_nco(
+nco		u_blink_nco(                 //make clk_4hz
 		.o_gen_clk	( clk_4hz	),
 		.i_nco_num	( 32'd12500000	),
 		.clk		( clk		),
@@ -742,10 +753,11 @@ always@(posedge clk_4hz) begin
   case(o_mode)
  //   o_blink_seg_enb<=6'b111111;
     MODE_SETUP : begin
+      o_blink_seg_enb<=6'b111111;   //all seg_enb on at first
       case(o_position)
         POS_SEC : begin
           if(1) begin
-            o_blink_seg_enb[0]<=!o_blink_seg_enb[0];
+            o_blink_seg_enb[0]<=!o_blink_seg_enb[0];  
             o_blink_seg_enb[1]<=!o_blink_seg_enb[1];
           end
         end
@@ -766,6 +778,12 @@ always@(posedge clk_4hz) begin
 //        default : o_blink_seg_enb<=6'b111111;
       endcase
 //      default : o_blink_seg_enb<=6'b111111;
+    end
+    MODE_CLOCK  : begin
+      o_blink_seg_enb<=6'b111111; //clock mode: all seg_enb on at first
+    end
+    MODE_ALARM  : begin
+      o_blink_seg_enb<=6'b111111; //alarm mode: all seg_enb on at first
     end
   endcase 
 end
