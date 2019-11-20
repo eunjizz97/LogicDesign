@@ -729,27 +729,25 @@ input         rst_n           ;
 reg     [5:0] o_blink_seg_enb     ;    // 0?? blink ??? ?
 
 //wire  cnt_blink;
-wire  clk_200hz;
+wire  clk_4hz;
 
 nco		u_blink_nco(
-		.o_gen_clk	( clk_200hz	),
-		.i_nco_num	( 32'd250000	),
+		.o_gen_clk	( clk_4hz	),
+		.i_nco_num	( 32'd12500000	),
 		.clk		( clk		),
 		.rst_n		( rst_n		));
 		
 initial o_blink_seg_enb=6'b111111;
-always@(posedge clk_200hz) begin
+always@(posedge clk_4hz) begin
   case(o_mode)
  //   o_blink_seg_enb<=6'b111111;
     MODE_SETUP : begin
       case(o_position)
         POS_SEC : begin
- //         cnt_blink <= cnt_blink + 1'b1;
           if(1) begin
             o_blink_seg_enb[0]<=!o_blink_seg_enb[0];
             o_blink_seg_enb[1]<=!o_blink_seg_enb[1];
           end
-//          cnt_blink <= cnt_blink + 1'b1;
         end
         
         POS_MIN : begin
@@ -757,7 +755,6 @@ always@(posedge clk_200hz) begin
             o_blink_seg_enb[2]<=!o_blink_seg_enb[2];
             o_blink_seg_enb[3]<=!o_blink_seg_enb[3];
           end
-//          cnt_blink <= cnt_blink + 1'b1;
         end
         
         POS_HR : begin
@@ -765,7 +762,6 @@ always@(posedge clk_200hz) begin
             o_blink_seg_enb[4]<=!o_blink_seg_enb[4];
             o_blink_seg_enb[5]<=!o_blink_seg_enb[5];
           end
-//          cnt_blink <= cnt_blink + 1'b1;
         end
 //        default : o_blink_seg_enb<=6'b111111;
       endcase
