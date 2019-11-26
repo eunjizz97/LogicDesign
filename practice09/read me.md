@@ -7,8 +7,8 @@
 ###  **FPGA** : FPGA의 적외선 컨트롤러를 이용하여 리모컨 작동에 대해 관찰 
 ### **ModelSim - Wave Form** : u_ir 의 신호들의 wave를 추가하여 관찰
     i_ir_rxb: 리모컨 송신 신호 (반전)
-    ir_rx: 리모컨 송신 신호 ```
-    ![](https://github.com/eunjizz97/LogicDesign/blob/master/practice09/practice09pic.JPG)
+    ir_rx: 리모컨 송신 신호 
+    ![] (https://github.com/eunjizz97/LogicDesign/blob/master/practice09/practice09pic3.JPG )
     ![](https://github.com/eunjizz97/LogicDesign/blob/master/practice09/practice09pic2.JPG)
     ![](https://github.com/eunjizz97/LogicDesign/blob/master/practice09/practice09pic.JPG)
 
