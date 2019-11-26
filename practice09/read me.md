@@ -9,6 +9,8 @@
     i_ir_rxb: 리모컨 송신 신호 (반전)
     ir_rx: 리모컨 송신 신호
     ![](https://github.com/eunjizz97/LogicDesign/blob/master/practice09/practice09pic3.JPG)
+    ![](https://github.com/eunjizz97/LogicDesign/blob/master/practice09/practice09pic2.JPG)
+    ![](https://github.com/eunjizz97/LogicDesign/blob/master/practice09/practice09pic.JPG)
 
 ##  **동작설명**  
 ### 리모컨 송신 신호 
