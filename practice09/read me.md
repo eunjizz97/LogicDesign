@@ -15,10 +15,14 @@
 	  1. Lead code: 프레임의 모드 선택
 	  2. Custom code: 특정회사를 나타냄
 	  3. Data code: 송신 데이터 (반전 되게 하나 더 만들음)
-    
+### 코드 설명
+	1. seq_rx : 2'b00 = 모두 low, 2'b01 = 현재 high 들어온 상태, 2'b10 = 모두 high 
+	2. Data code: 
+	- seg_rx가 2'b10이면 + 1'b1 
+	- 32bit 가 되면 한 주기 완성
+	3. Leader code: cnt_h가 8999와 599만큼 간 후에 custom code 발생
+	
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTgwODIzNDg3LC0yMTMyOTk3MjQzLC0xMD
-ExOTc3NDYsLTE5OTQzNDI3NjAsMjExMDg5Njk0NywtMjEwMTg3
-NjE1OV19
+eyJoaXN0b3J5IjpbNTgwODIzNDg3XX0=
 -->
