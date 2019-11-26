@@ -5,12 +5,12 @@
   ### 
   **FPGA** : FPGA의 적외선 컨트롤러를 이용하여 리모컨 작동에 대해 관찰 
    ###
-    **Wave Form** : - 코드에서 `i_sw2`를 누르는 순간이 아닌 `때는 순간 숫자가 증가`하게 하려면? (모드 변경할 때 다른 숫자들 올라가는 건 무시) ```verilog reg o_sec_clk ; reg o_min_clk ; always @(*) begin case(o_mode) MODE_CLOCK : begin o_sec_clk = clk_1hz; o_min_clk = i_max_hit_sec; end MODE_SETUP : begin case(o_position) POS_SEC : begin o_sec_clk = ~i_sw2; o_min_clk = 1'b0; end POS_MIN : begin o_sec_clk = 1'b0; o_min_clk = ~i_sw2; end endcase end endcase end ``` 
+    **Wave Form** : 
 
 ###
  **Project Guide : 질의응답불가 ** : 시:분:초에 대한 디지털 시계 완성 : 설정모드에서 7-segment의 dp를 활용한 설계
   - 예)초 설정 시 - 초 부분의 dp led를 점등 : Blink 모드개발 - 설정모드에서 설정부분을 깜빡이게 Display
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTkxMzQ4NDAyLC0xOTk0MzQyNzYwLDIxMT
-A4OTY5NDcsLTIxMDE4NzYxNTldfQ==
+eyJoaXN0b3J5IjpbMjAwOTAxNzc0NSwtMTk5NDM0Mjc2MCwyMT
+EwODk2OTQ3LC0yMTAxODc2MTU5XX0=
 -->
