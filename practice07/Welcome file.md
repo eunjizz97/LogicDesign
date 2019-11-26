@@ -6,12 +6,9 @@
   ### 
   **FPGA** : FPGA의 적외선 컨트롤러를 이용하여 리모컨 작동에 대해 관찰 
    ###
-    **ModelSim - Wave Form** : 
+    **ModelSim - Wave Form** : u_ir 의 신호들의 wave를 추가하여 관찰
 
-###
- **Project Guide : 질의응답불가 ** : 시:분:초에 대한 디지털 시계 완성 : 설정모드에서 7-segment의 dp를 활용한 설계
-  - 예)초 설정 시 - 초 부분의 dp led를 점등 : Blink 모드개발 - 설정모드에서 설정부분을 깜빡이게 Display
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTE5Nzc0NiwtMTk5NDM0Mjc2MCwyMT
-EwODk2OTQ3LC0yMTAxODc2MTU5XX0=
+eyJoaXN0b3J5IjpbLTMwNTQwMjU2LC0xMDExOTc3NDYsLTE5OT
+QzNDI3NjAsMjExMDg5Njk0NywtMjEwMTg3NjE1OV19
 -->
