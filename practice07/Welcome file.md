@@ -1,7 +1,6 @@
 # Lab 09
 ## 실습 내용
- ###
- **적외선 컨트롤러 (IR Controller)를 이용한 리모컨 송신 설계** 
+### **적외선 컨트롤러 (IR Controller)를 이용한 리모컨 송신 설계** 
   : NEC 적외선 통신 규약을 사용함.
   GitHub에 제공된 소스코드 사용: top module (top) 만 채워서 설계 : 이번 실습은 Test Bench 를 이용하여 wave form 만들어서 확인 & FPGA 로 확인
   
@@ -19,7 +18,7 @@
     
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUxNjEwMTEwNSwtMjEzMjk5NzI0MywtMT
-AxMTk3NzQ2LC0xOTk0MzQyNzYwLDIxMTA4OTY5NDcsLTIxMDE4
-NzYxNTldfQ==
+eyJoaXN0b3J5IjpbNTgwODIzNDg3LC0yMTMyOTk3MjQzLC0xMD
+ExOTc3NDYsLTE5OTQzNDI3NjAsMjExMDg5Njk0NywtMjEwMTg3
+NjE1OV19
 -->
