@@ -31,7 +31,7 @@ end
 
 endmodule ``` 
 
-	###
+### 
   
   **Project Guide : 질의응답불가 ** : 시:분:초에 대한 디지털 시계 완성 : 설정모드에서 7-segment의 dp를 활용한 설계
    - 예)초 설정 시 - 초 부분의 dp led를 점등 : Blink 모드개발 - 설정모드에서 설정부분을 깜빡이게 Display
