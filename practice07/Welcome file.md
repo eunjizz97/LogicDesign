@@ -7,7 +7,8 @@
     ###
      **Quiz** - 코드에서 `i_sw2`를 누르는 순간이 아닌 `때는 순간 숫자가 증가`하게 하려면? (모드 변경할 때 다른 숫자들 올라가는 건 무시) 
      
-```reg		o_sec_clk		;
+```
+reg		o_sec_clk		;
 reg		o_min_clk		;
 always @(*) begin
 	case(o_mode)
@@ -30,9 +31,7 @@ always @(*) begin
 	endcase
 end
 ```
-### 
-  
-  **Project Guide : 질의응답불가 ** : 시:분:초에 대한 디지털 시계 완성 : 설정모드에서 7-segment의 dp를 활용한 설계
+### **Project Guide : 질의응답불가 ** : 시:분:초에 대한 디지털 시계 완성 : 설정모드에서 7-segment의 dp를 활용한 설계
    - 예)초 설정 시 - 초 부분의 dp led를 점등 : Blink 모드개발 - 설정모드에서 설정부분을 깜빡이게 Display
    
  <!--stackedit_data:
